@@ -4,7 +4,7 @@ namespace POMProject.Pages
 {
     public class BasePage
     {
-        private readonly IWebDriver driver;
+        protected readonly IWebDriver driver;
 
         public BasePage(IWebDriver driver)
         {

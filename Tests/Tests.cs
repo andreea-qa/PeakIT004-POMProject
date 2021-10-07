@@ -21,9 +21,11 @@ namespace POMProject.Tests
         public void NavigateToDashboardPage()
         {
             LoginPage loginPage = new LoginPage(driver);
+            AdminPage adminPage = new AdminPage(driver);
             loginPage.OpenLoginPage();
             loginPage.Login("admin", "admin123");
-            
+            Assert.IsTrue(adminPage.IsUserLoggedIn("Paul"));
+            adminPage.OpenDashboard();
         }
 
         [TearDown]
