@@ -18,14 +18,24 @@ namespace POMProject.Tests
         }
 
         [Test]
-        public void NavigateToDashboardPage()
+        public void DashboardPageTest()
         {
             LoginPage loginPage = new LoginPage(driver);
             AdminPage adminPage = new AdminPage(driver);
             loginPage.OpenLoginPage();
             loginPage.Login("admin", "admin123");
             Assert.IsTrue(adminPage.IsUserLoggedIn("Paul"));
+            Assert.IsTrue(adminPage.IsUserLoggedIn("Paul"), "The user is not logegd in");
             adminPage.OpenDashboard();
+        }
+
+        [Test]
+        public void InvalidLoginTest()
+        {
+            LoginPage loginPage = new LoginPage(driver);
+            loginPage.OpenLoginPage();
+            loginPage.Login("admin");
+            Assert.IsTrue(loginPage.IsMessageDisplayed("Password cannot be empty"));
         }
 
         [TearDown]
