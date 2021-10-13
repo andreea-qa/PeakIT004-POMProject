@@ -21,6 +21,7 @@ namespace POMProject.Pages
         {
             driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/");
         }
+
         public BasePage Login(string username, string password)
         {
             NameInput.SendKeys(username);
@@ -28,6 +29,7 @@ namespace POMProject.Pages
             LoginButton.Click();
             return new BasePage(driver);
         }
+
         public LoginPage Login(string username)
         {
             NameInput.SendKeys(username);

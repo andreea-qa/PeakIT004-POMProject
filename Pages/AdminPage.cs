@@ -12,5 +12,10 @@ namespace POMProject.Pages
         {
             return LoggedUser.Text.Contains(username);
         }
+
+        public override bool IsTitleCorrect()
+        {
+            return driver.Title.Equals("OrangeHRM");
+        }
     }
 }

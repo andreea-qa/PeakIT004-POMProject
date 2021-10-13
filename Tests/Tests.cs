@@ -25,7 +25,7 @@ namespace POMProject.Tests
             loginPage.OpenLoginPage();
             loginPage.Login("admin", "admin123");
             Assert.IsTrue(adminPage.IsUserLoggedIn("Paul"));
-            Assert.IsTrue(adminPage.IsUserLoggedIn("Paul"), "The user is not logegd in");
+            Assert.IsTrue(adminPage.IsTitleCorrect());
             adminPage.OpenDashboard();
         }
 

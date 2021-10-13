@@ -5,10 +5,12 @@ namespace POMProject.Pages
     public class BasePage
     {
         protected readonly IWebDriver driver;
+        private string title;
 
         public BasePage(IWebDriver driver)
         {
             this.driver = driver;
+            this.title = title;
         }
 
         private IWebElement DashboardMenuLink => driver.FindElement(By.Id("menu_dashboard_index"));
@@ -17,6 +19,11 @@ namespace POMProject.Pages
         {
             DashboardMenuLink.Click();
             return new DashboardPage(driver);
+        }
+
+        public virtual bool IsTitleCorrect()
+        {
+            return driver.Title.Equals(title);
         }
     }
 }
