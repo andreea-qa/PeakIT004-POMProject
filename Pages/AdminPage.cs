@@ -13,6 +13,7 @@ namespace POMProject.Pages
             return LoggedUser.Text.Contains(username);
         }
 
+        // Method in derived page
         public override bool IsTitleCorrect()
         {
             return driver.Title.Equals("OrangeHRM");

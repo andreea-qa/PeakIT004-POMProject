@@ -27,7 +27,7 @@ namespace POMProject.Pages
             NameInput.SendKeys(username);
             PasswordInput.SendKeys(password);
             LoginButton.Click();
-            return new BasePage(driver);
+            return new AdminPage(driver);
         }
 
         public LoginPage Login(string username)

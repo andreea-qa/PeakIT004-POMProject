@@ -6,5 +6,9 @@ namespace POMProject.Pages
     {
         public DashboardPage(IWebDriver driver) : base(driver) { }
 
+        public override bool IsTitleCorrect()
+        {
+            return driver.Title.Equals("Dashboard");
+        }
     }
 }
