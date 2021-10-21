@@ -18,6 +18,8 @@ namespace POMProject.Pages
             DashboardMenuLink.Click();
             return new DashboardPage(driver);
         }
+        public abstract bool IsUserLoggedIn(string username);
+        
 
         public abstract bool IsTitleCorrect();
     }
