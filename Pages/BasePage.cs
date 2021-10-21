@@ -14,12 +14,12 @@ namespace POMProject.Pages
             this.title = title;
         }
 
-        private IWebElement DashboardMenuLink => driver.FindElement(By.Id("menu_dashboard_index"));
+        private IWebElement AdminMenuLink => driver.FindElement(By.Id("menu_admin_viewAdminModule"));
 
-        public DashboardPage OpenDashboard()
+        public UserManagementPage OpenUserManagementPage()
         {
-            DashboardMenuLink.Click();
-            return new DashboardPage(driver);
+            AdminMenuLink.Click();
+            return new UserManagementPage(driver);
         }
 
         public bool IsUserLoggedIn(string username)

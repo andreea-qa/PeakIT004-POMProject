@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using POMProject.Pages;
 
-
 namespace POMProject.Tests
 {
     [TestFixture]
@@ -18,7 +17,7 @@ namespace POMProject.Tests
         }
 
         [Test]
-        public void DashboardPageTest()
+        public void UsersAdminPageTest()
         {
             LoginPage loginPage = new LoginPage(driver);
             AdminPage adminPage = new AdminPage(driver);
@@ -26,7 +25,7 @@ namespace POMProject.Tests
             loginPage.Login("admin", "admin123");
             Assert.IsTrue(adminPage.IsUserLoggedIn("Paul"));
             Assert.IsTrue(adminPage.IsTitleCorrect());
-            adminPage.OpenDashboard();
+            adminPage.OpenUserManagementPage();
         }
 
         [Test]
