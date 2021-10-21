@@ -11,7 +11,6 @@ namespace POMProject.Pages
         public BasePage(IWebDriver driver)
         {
             this.driver = driver;
-            this.title = title;
         }
 
         private IWebElement AdminMenuLink => driver.FindElement(By.Id("menu_admin_viewAdminModule"));
