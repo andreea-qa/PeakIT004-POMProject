@@ -6,6 +6,7 @@ namespace POMProject.Pages
     {
         protected readonly IWebDriver driver;
         private string title;
+        private IWebElement LoggedUser => driver.FindElement(By.Id("welcome"));
 
         public BasePage(IWebDriver driver)
         {
@@ -19,6 +20,11 @@ namespace POMProject.Pages
         {
             DashboardMenuLink.Click();
             return new DashboardPage(driver);
+        }
+
+        public bool IsUserLoggedIn(string username)
+        {
+            return LoggedUser.Text.Contains(username);
         }
 
         public virtual bool IsTitleCorrect()
