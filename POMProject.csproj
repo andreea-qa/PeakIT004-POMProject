@@ -14,8 +14,4 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="94.0.4606.4101" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="PresentationSlides\" />
-  </ItemGroup>
-
 </Project>
